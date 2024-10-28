@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Spinner para el tipo de pizza -->
+    <Spinner
+        android:id="@+id/spinnerPizzaType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/pizza_types"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- RadioGroup para el tamaño de pizza -->
+    <RadioGroup
+        android:id="@+id/radioGroupSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/spinnerPizzaType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioIndividual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Individual" />
+
+        <RadioButton
+            android:id="@+id/radioMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mediana" />
+
+        <RadioButton
+            android:id="@+id/radioLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grande" />
+
+        <RadioButton
+            android:id="@+id/radioFamily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Familiar" />
+    </RadioGroup>
+
+    <!-- CheckBoxes para ingredientes adicionales -->
+    <LinearLayout
+        android:id="@+id/layoutExtras"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <CheckBox
+            android:id="@+id/checkBoxExtraCheese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Extra queso" />
+
+        <CheckBox
+            android:id="@+id/checkBoxExtraFries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Extra papas" />
+
+        <CheckBox
+            android:id="@+id/checkBoxExtraPineapple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Extra piña" />
+
+        <CheckBox
+            android:id="@+id/checkBoxExtraOnions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Extra cebollas" />
+    </LinearLayout>
+
+    <!-- Botón para confirmar el pedido -->
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Revisar"
+        app:layout_constraintTop_toBottomOf="@id/layoutExtras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- TextView para mostrar el resumen -->
+    <TextView
+        android:id="@+id/textViewSummary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Resumen de Pedido"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonConfirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
